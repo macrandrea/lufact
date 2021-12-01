@@ -1,0 +1,14 @@
+function W = wilkin(n)
+W=eye(n);
+W_n=ones(n,1);
+
+for i=1:n-1 %col
+    for j=i+1:n %row
+        W(i,j)= -1 ;
+        if i==-1
+
+    end
+
+end
+
+end
