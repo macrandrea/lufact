@@ -17,3 +17,7 @@ maxGrowth   =max     (Gi);
 %A=[4,3;6,3];
 %[L,U, g,ba]=lufact(A);
 %[Elle,Uu,Gi, BaE]=
+H=hilb(10);
+[L,U]=flufact(H);
+A=randi(10, [3,3]);
+A = makeDD(A);

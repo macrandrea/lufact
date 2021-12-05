@@ -1,22 +1,23 @@
-function [L,U] = lufact(A)
+function [L,U,g,ba] = lufact(A)
+n=length(A);
+m=width(A);
+L=eye(n,n);
 U=A;
-n=length(U);
-m=width(U);
-if m==n % check for square
-    for k=1:n-1 %colfor j=k+1:n %row
-        if U(k,k)~=0 %check if we are dividing by 0
-            for j=k+1:n
-                U(j,k)=U(j,k)/U(k,k);
-                U(j,k+1:n)=U(j,k+1:n)-U(j,k)*U(k,k+1:n);
-            end
-        else
-            error('factorization breaks down due to division by a quantity smaller than machine precision')
-        end
-    end       
-else
+ if m==n % check for square
+     for k=1:n-1 %col
+     	for j=k+1:n %row
+             if det(A(j-1,k))~=0 %check for the det(A) to be diff from zero
+                 L(j,k)=A(j,k)/A(k,k);
+                 U(j,k:n)=A(j,k:n)-L(j,k)*A(k,k:n);
+             else
+                 error('factorization breaks down due to division by a quantity smaller than machine precision')
+             end
+       end       
+     end
+ else
      error('non-square matrix')
-end
-L=tril(U,-1)+eye(n,n);
-U=triu(U);
-g=makeG(A,L,U); %growth factor
+ end
+ g=makeG(A,L,U); %growth factor
+ ba=makeBa(A,L,U); %backward error
+ %ba=norm(A - L*U,'inf') / norm(A, 'inf');
 end

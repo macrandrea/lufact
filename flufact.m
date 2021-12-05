@@ -19,5 +19,5 @@ end
 U=transpose(U);
 L=tril(U,-1)+eye(n,n);
 U=triu(U);
-g=makeG(A,L,U); %growth factor
+%g=makeG(A,L,U); %growth factor
 end

@@ -1,0 +1,7 @@
+clear;
+clc;
+n=2;
+A=wilkin(n);
+e=ones(1,n)';
+b=A*e;
+x=A\e;
