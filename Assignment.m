@@ -2,20 +2,15 @@ clc;
 clear;
 tic;
 MaxEntry=10;
-[Gi, BaE,M,x,y]=testamatrici(MaxEntry);
+n=100;
+[Gi, BaE,M]=testamatrici(MaxEntry,n);
 %statistiche
-mediumError =mean    (y);
-varError    =var     (y);
-minError    =min     (y);
-maxError    =max     (y);
-mediumGrowth=mean    (x);
-varGrowth   =var     (x);
-minGrowth   =min     (x);
-maxGrowth   =max     (x);
+mediumError =mean    (BaE);
+varError    =var     (BaE);
+minError    =min     (BaE);
+maxError    =max     (BaE);
+mediumGrowth=mean    (Gi);
+varGrowth   =var     (Gi);
+minGrowth   =min     (Gi);
+maxGrowth   =max     (Gi);
 toc;
-
-
-
-
-%H=hilb(10);
-%[L,U]=lufact(H);

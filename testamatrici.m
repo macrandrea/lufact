@@ -1,5 +1,5 @@
-function [Gi, BaE,M,x,y]=testamatrici(MaxEntry)
-n   =10;
+function [Gi, BaE,M]=testamatrici(MaxEntry,n)
+%n   =10;
 Gi  =[];
 BaE =[];
 x=[];
