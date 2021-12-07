@@ -1,23 +1,21 @@
 clc; 
 clear;
-MinEntry=0;
-MaxEntry=10; MaxRow=4; MaxCols=4;
-[Gi, BaE]=testamatrici(MaxEntry, MaxRow, MaxCols);
+tic;
+MaxEntry=10;
+[Gi, BaE,M,x,y]=testamatrici(MaxEntry);
 %statistiche
-mediumError =mean    (BaE);
-varError    =var     (BaE);
-minError    =min     (BaE);
-maxError    =max     (BaE);
-mediumGrowth=mean    (Gi);
-varGrowth   =var     (Gi);
-minGrowth   =min     (Gi);
-maxGrowth   =max     (Gi);
-%statisticheLU(MaxEntry, MaxRow, MaxCols);
-%A=randi(100, [3,3]);
-%A=[4,3;6,3];
-%[L,U, g,ba]=lufact(A);
-%[Elle,Uu,Gi, BaE]=
-H=hilb(10);
-[L,U]=flufact(H);
-A=randi(10, [3,3]);
-A = makeDD(A);
+mediumError =mean    (y);
+varError    =var     (y);
+minError    =min     (y);
+maxError    =max     (y);
+mediumGrowth=mean    (x);
+varGrowth   =var     (x);
+minGrowth   =min     (x);
+maxGrowth   =max     (x);
+toc;
+
+
+
+
+%H=hilb(10);
+%[L,U]=lufact(H);

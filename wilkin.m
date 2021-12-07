@@ -1,9 +1,14 @@
 function W = wilkin(n)
-    W=eye(n); % start from the identity matrix
-    for i=1:n-1 % put to -1 the lower triangular part
-        for j=i+1:n
-            W(j,i)= -1 ;
+W=eye(n);
+W_n=ones(n,1);
+    for i=1:n-1 %col
+        for j=i+1:n %row
+            W(j,i)= -1 ; %W(i,j)= -1
+            if i==n-1
+                if j==n
+                W(:,j)=W_n(:); %W(:,i+1)=W_n(:)
+                end
+            end
         end
     end
-    W(:,n)=ones(n,1); % put to 1 the last column
 end
