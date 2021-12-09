@@ -1,9 +1,9 @@
 clc; 
 clear;
 tic;
-MaxEntry=10;
+size=100;
 n=100;
-[Gi, BaE,M]=testamatrici(MaxEntry,n);
+[Gi, BaE,M]=testamatrici(size,n);
 %statistiche
 mediumError =mean    (BaE);
 varError    =var     (BaE);
