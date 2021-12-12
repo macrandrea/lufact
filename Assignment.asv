@@ -1,5 +1,0 @@
-clc; 
-clear;
-A=randi(1000, [4,4]);
-%A=[4,3;6,5];
-[L,U]=lufact(A);

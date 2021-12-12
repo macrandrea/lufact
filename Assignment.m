@@ -1,10 +1,8 @@
-clc; 
-clear;
 tic;
 size=100;
-n=100;
+n=200;
 [Gi, BaE,M]=testamatrici(size,n);
-%statistiche
+%stats
 mediumError =mean    (BaE);
 varError    =var     (BaE);
 minError    =min     (BaE);

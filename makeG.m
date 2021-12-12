@@ -1,6 +1,4 @@
 function g=makeG(A,L,U)
-    mA=max(max(abs(A)));
-    mU=max(max(abs(U)));
-    mL=max(max(abs(L)));
-    g=mL*mU/mA;
+    G=abs(L)*abs(U);
+    g=max(max(G))/max(max(abs(A)));
 end
